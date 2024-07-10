@@ -1,3 +1,4 @@
+# Importing libraries
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -10,9 +11,9 @@ dataset = pd.read_csv('Social_Network_Ads.csv')
 x = dataset.iloc[:, :-1].values
 y = dataset.iloc[:, -1].values
 
-# There no missing value or categorical feature in the dataset
+# There are no missing values or categorical features in the dataset
 
-# Splitting the data into training and test set
+# Splitting the data into training and test sets
 x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.25)
 
 # Feature scaling
@@ -20,7 +21,7 @@ scalar = StandardScaler()
 x_train = scalar.fit_transform(x_train)
 x_test = scalar.transform(x_test)
 
-# Training the model on our training and test sets
+# Training the model on our training set
 classifier = LogisticRegression()
-y_pre_train = classifier.fit(x_train,y_train)
+y_pre_train = classifier.fit(x_train, y_train)
 
